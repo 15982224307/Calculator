@@ -10,6 +10,7 @@ import javax.swing.*;
  */
 public class RunMethod {
 	public static void main(String[] args) {
+
 		JFrame jFrame = new JFrame("计算器");//设置标题
 		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//关闭窗口时的行为
 		jFrame.setLocationRelativeTo(null);//设置窗口在屏幕正中显示
