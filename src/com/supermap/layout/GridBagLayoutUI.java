@@ -13,20 +13,9 @@ public class GridBagLayoutUI {
 	private JButton[] keys = new JButton[KEYS.length];
 	private JTextField resultText = new JTextField("0");
 
-	private void creatAndShowUI() {
 
-		JFrame jFrame = new JFrame("计算器");
-		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		jFrame.setLocationRelativeTo(null);
-		jFrame.setResizable(false);
-		addComponentsToPane(jFrame.getContentPane());
-		jFrame.pack();
-		jFrame.setVisible(true);//显示窗口
-	}
-
-	private void addComponentsToPane(Container contentPane) {
+	public JPanel addComponentsToPane(JPanel contentPane) {
 		GridBagLayout gridBagLayout = new GridBagLayout();//创建布局
-		GridBagConstraints gridBagConstraints = new GridBagConstraints();//约束布局
 		contentPane.setLayout(gridBagLayout);//将布局添加到面板中
 		resultText.setFont(new Font("result", Font.PLAIN, 20));//设置结果显示的字体样式
 		resultText.setEditable(false);//设置不可编辑
@@ -44,9 +33,8 @@ public class GridBagLayoutUI {
 				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
 			}
 		}
+		return contentPane;
 	}
 
-	public static void main(String[] args) {
-		new GridBagLayoutUI().creatAndShowUI();
-	}
+
 }
