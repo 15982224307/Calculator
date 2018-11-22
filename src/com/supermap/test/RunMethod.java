@@ -1,4 +1,7 @@
-package com.supermap.layout;
+package com.supermap.test;
+
+import com.supermap.layout.GridBagLayoutUI;
+import com.supermap.layout.GroupLayoutUI;
 
 import javax.swing.*;
 
