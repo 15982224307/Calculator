@@ -2,6 +2,8 @@ package com.supermap.layout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author Administrator
@@ -55,7 +57,7 @@ public class GroupLayoutUI {
 								.addGroup(layout.createSequentialGroup()
 										.addGroup(layout.createParallelGroup()
 												.addComponent(keys[CE], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[SEVEN],                                 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[SEVEN], 0, 100, Short.MAX_VALUE)
 												.addComponent(keys[FOUR], 0, 100, Short.MAX_VALUE)
 												.addComponent(keys[ONE], 0, 100, Short.MAX_VALUE))
 										.addGroup(layout.createParallelGroup()
@@ -108,8 +110,11 @@ public class GroupLayoutUI {
 								.addComponent(keys[SUB], 38, 38, Short.MAX_VALUE)
 								.addComponent(keys[ADD], 38, 38, Short.MAX_VALUE)
 								.addComponent(keys[EQUAL], 38, 38, Short.MAX_VALUE))));
+		//为所有按钮添加点击事件
+		OperationEvent.addClickEvent(keys, resultText);
 
-		return  jPanel;
+
+		return jPanel;
 
 	}
 

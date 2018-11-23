@@ -4,6 +4,7 @@ package com.supermap.layout;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.security.Key;
 
 /**
@@ -15,6 +16,9 @@ public class GridBagLayoutUI {
 	private JButton[] keys = new JButton[KEYS.length];
 	private JTextField resultText = new JTextField("0");
 
+	public void GridBagLayoutUI() {
+		System.out.println(325);
+	}
 
 	public JPanel addComponentsToPane(JPanel contentPane) {
 		GridBagLayout gridBagLayout = new GridBagLayout();//创建布局
@@ -22,7 +26,7 @@ public class GridBagLayoutUI {
 		resultText.setFont(new Font("result", Font.PLAIN, 20));//设置结果显示的字体样式
 		resultText.setEditable(false);//设置不可编辑
 		resultText.setHorizontalAlignment(SwingConstants.RIGHT);//右对齐
-		contentPane.add(resultText, new GBC(0, 0, 4, 2).setIpad(400,30)
+		contentPane.add(resultText, new GBC(0, 0, 4, 2).setIpad(400, 30)
 				.setWeight(2, 1).setFill(GridBagConstraints.BOTH));
 		for (int i = 0; i < keys.length; i++) {
 			keys[i] = new JButton(KEYS[i]);
@@ -35,6 +39,9 @@ public class GridBagLayoutUI {
 				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
 			}
 		}
+		//为所有按钮添加点击事件
+		OperationEvent.addClickEvent(keys, resultText);
+
 		return contentPane;
 	}
 

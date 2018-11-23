@@ -19,7 +19,7 @@ public class RunMethod {
 
 		GridBagLayoutUI gridBagLayoutUI = new GridBagLayoutUI();//使用GridBagLyout布局计算器
 		GroupLayoutUI groupLayoutUI = new GroupLayoutUI();//使用GroupLayout布局计算器
-		jFrame.setContentPane(gridBagLayoutUI.addComponentsToPane(jPanel));//得到布局之后的面板
+		jFrame.setContentPane(groupLayoutUI.addComponentsToPane(jPanel));//得到布局之后的面板
 
 		jFrame.pack();//容纳所有组件
 		jFrame.setVisible(true);//显示窗口
