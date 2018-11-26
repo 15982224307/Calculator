@@ -2,8 +2,6 @@ package com.supermap.layout;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * @author Administrator
@@ -32,6 +30,7 @@ public class GroupLayoutUI {
 	private JButton[] keys = new JButton[KEYS.length];
 	private static JTextField resultText = new JTextField("0");
 
+	//返回创建好的Panel
 	public JPanel addComponentsToPane(JPanel jPanel) {
 		resultText.setFont(new Font("result", Font.PLAIN, 20));//设置结果显示的字体样式
 		resultText.setEditable(false);//设置不可编辑

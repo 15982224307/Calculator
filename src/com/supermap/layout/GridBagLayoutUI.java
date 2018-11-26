@@ -20,6 +20,7 @@ public class GridBagLayoutUI {
 		System.out.println(325);
 	}
 
+	//返回创建好的Panel
 	public JPanel addComponentsToPane(JPanel contentPane) {
 		GridBagLayout gridBagLayout = new GridBagLayout();//创建布局
 		contentPane.setLayout(gridBagLayout);//将布局添加到面板中
