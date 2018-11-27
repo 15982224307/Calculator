@@ -10,7 +10,6 @@ import java.awt.*;
 public class GridBagLayoutUI {
 
 
-	private JButton[] keys = new JButton[ButtonData.KEYS.length];
 	private JTextField resultText = new JTextField("0");
 
 
@@ -24,21 +23,21 @@ public class GridBagLayoutUI {
 		resultText.setHorizontalAlignment(SwingConstants.RIGHT);//右对齐
 		contentPane.add(resultText, new GBC(0, 0, 4, 2).setIpad(400, 30)
 				.setWeight(2, 1).setFill(GridBagConstraints.BOTH));
-		for (int i = 0; i < keys.length; i++) {
-			keys[i] = new JButton(ButtonData.KEYS[i]);
-			keys[i].setFocusPainted(false);//点击时不会出现白色线框
-			if (i == keys.length - 3) {
-				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 2, 1).setIpad(0, 10).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
-			} else if (i == keys.length - 2 || i == keys.length - 1) {
-				contentPane.add(keys[i], new GBC(i % 4 + 1, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
+		for (int i = 0; i < ButtonData.keys.length; i++) {
+			ButtonData.keys[i] = new JButton(ButtonData.KEYS[i]);
+			ButtonData.keys[i].setFocusPainted(false);//点击时不会出现白色线框
+			if (i == ButtonData.keys.length - 3) {
+				contentPane.add(ButtonData.keys[i], new GBC(i % 4, i / 4 + 2, 2, 1).setIpad(0, 10).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
+			} else if (i == ButtonData.keys.length - 2 || i == ButtonData.keys.length - 1) {
+				contentPane.add(ButtonData.keys[i], new GBC(i % 4 + 1, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
 			} else {
-				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
+				contentPane.add(ButtonData.keys[i], new GBC(i % 4, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
 			}
 		}
 		return contentPane;
 	}
 
-	public void addOnclickEvent(){
+	public void addOnclickEvent(JButton[] keys){
 		//为所有按钮添加点击事件
 		OperationEvent.addClickEvent(keys, resultText);
 	}

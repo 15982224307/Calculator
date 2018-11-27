@@ -1,5 +1,7 @@
 package com.supermap.layout;
 
+import javax.swing.*;
+
 /**
  * @author Administrator
  */
@@ -34,5 +36,6 @@ public class ButtonData {
 	public final static String ce = "CE";
 	public final static String space = "0";
 	public final static String delete = "←";
+	public final static JButton[] keys = new JButton[ButtonData.KEYS.length];
 
 }

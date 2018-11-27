@@ -39,6 +39,9 @@ public class OperationEvent {
 							lock = false;
 						}
 					}
+					if(error(btnText)){
+						lock = false;
+					}
 					if (!lock) {
 						switch (btnText) {//点击不同的按钮产生不同的操作
 							case ButtonData.ce:
@@ -201,6 +204,7 @@ public class OperationEvent {
 									}
 								}
 								delete = false;
+								lock = true;
 								break;
 							case ButtonData.point:
 								if (containPoint(newString) < 1) {//一个数字中只能有一个小数点

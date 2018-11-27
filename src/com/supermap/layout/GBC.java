@@ -15,7 +15,7 @@ public class GBC extends GridBagConstraints{
     }
 
     //带有坐标和大小的构造方法
-    GBC(int gridx, int gridy, int gridWidth, int gridHeight){
+    public GBC(int gridx, int gridy, int gridWidth, int gridHeight){
         this.gridx = gridx;
         this.gridy = gridy;
         this.gridwidth = gridWidth;
