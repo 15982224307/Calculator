@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @author Administrator
@@ -9,7 +6,7 @@ import java.util.Stack;
 public class StackTest {
 
 	public static void main(String[] args) {
-		String s = "Dsa.das.";
+		
 
 	}
 }

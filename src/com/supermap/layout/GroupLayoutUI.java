@@ -7,27 +7,8 @@ import java.awt.*;
  * @author Administrator
  */
 public class GroupLayoutUI {
-	private final String[] KEYS = {"CE", "C", "←", "÷", "7", "8", "9", "×", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="};
-	private final static int CE = 0;
-	private final static int C = 1;
-	private final static int BACK = 2;
-	private final static int DIV = 3;
-	private final static int SEVEN = 4;
-	private final static int EIGHT = 5;
-	private final static int NINE = 6;
-	private final static int MUL = 7;
-	private final static int FOUR = 8;
-	private final static int FIVE = 9;
-	private final static int SIX = 10;
-	private final static int SUB = 11;
-	private final static int ONE = 12;
-	private final static int TWO = 13;
-	private final static int THREE = 14;
-	private final static int ADD = 15;
-	private final static int ZERO = 16;
-	private final static int SPOT = 17;
-	private final static int EQUAL = 18;
-	private JButton[] keys = new JButton[KEYS.length];
+
+	private JButton[] keys = new JButton[ButtonData.KEYS.length];
 	private static JTextField resultText = new JTextField("0");
 
 	//返回创建好的Panel
@@ -40,7 +21,7 @@ public class GroupLayoutUI {
 		jPanel.setLayout(layout);
 		//初始化button数据
 		for (int i = 0; i < keys.length; i++) {
-			keys[i] = new JButton(KEYS[i]);
+			keys[i] = new JButton(ButtonData.KEYS[i]);
 			keys[i].setFocusPainted(false);
 		}
 		// 自动创建组件之间的间隙
@@ -55,28 +36,28 @@ public class GroupLayoutUI {
 						.addGroup(layout.createParallelGroup()
 								.addGroup(layout.createSequentialGroup()
 										.addGroup(layout.createParallelGroup()
-												.addComponent(keys[CE], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[SEVEN], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[FOUR], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[ONE], 0, 100, Short.MAX_VALUE))
+												.addComponent(keys[ButtonData.CE], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.SEVEN], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.FOUR], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.ONE], 0, 100, Short.MAX_VALUE))
 										.addGroup(layout.createParallelGroup()
-												.addComponent(keys[C], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[EIGHT], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[FIVE], 0, 100, Short.MAX_VALUE)
-												.addComponent(keys[TWO], 0, 100, Short.MAX_VALUE)))
-								.addComponent(keys[ZERO], 0, 100, 1000))
+												.addComponent(keys[ButtonData.C], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.EIGHT], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.FIVE], 0, 100, Short.MAX_VALUE)
+												.addComponent(keys[ButtonData.TWO], 0, 100, Short.MAX_VALUE)))
+								.addComponent(keys[ButtonData.ZERO], 0, 100, 1000))
 						.addGroup(layout.createParallelGroup()
-								.addComponent(keys[BACK], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[NINE], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[SIX], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[THREE], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[SPOT], 0, 100, Short.MAX_VALUE))
+								.addComponent(keys[ButtonData.BACK], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.NINE], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SIX], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.THREE], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SPOT], 0, 100, Short.MAX_VALUE))
 						.addGroup(layout.createParallelGroup()
-								.addComponent(keys[DIV], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[MUL], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[SUB], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[ADD], 0, 100, Short.MAX_VALUE)
-								.addComponent(keys[EQUAL], 0, 100, Short.MAX_VALUE))
+								.addComponent(keys[ButtonData.DIV], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.MUL], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SUB], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.ADD], 0, 100, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.EQUAL], 0, 100, Short.MAX_VALUE))
 				)
 		);
 		//垂直方向
@@ -85,30 +66,30 @@ public class GroupLayoutUI {
 				.addGroup(layout.createParallelGroup()
 						.addGroup(layout.createSequentialGroup()
 								.addGroup(layout.createParallelGroup()
-										.addComponent(keys[CE], 38, 38, Short.MAX_VALUE)
-										.addComponent(keys[C], 38, 38, Short.MAX_VALUE))
+										.addComponent(keys[ButtonData.CE], 38, 38, Short.MAX_VALUE)
+										.addComponent(keys[ButtonData.C], 38, 38, Short.MAX_VALUE))
 								.addGroup(layout.createParallelGroup()
-										.addComponent(keys[SEVEN], 38, 38, Short.MAX_VALUE)
-										.addComponent(keys[EIGHT], 38, 38, Short.MAX_VALUE))
+										.addComponent(keys[ButtonData.SEVEN], 38, 38, Short.MAX_VALUE)
+										.addComponent(keys[ButtonData.EIGHT], 38, 38, Short.MAX_VALUE))
 								.addGroup(layout.createParallelGroup()
-										.addComponent(keys[FOUR], 38, 38, Short.MAX_VALUE)
-										.addComponent(keys[FIVE], 38, 38, Short.MAX_VALUE))
+										.addComponent(keys[ButtonData.FOUR], 38, 38, Short.MAX_VALUE)
+										.addComponent(keys[ButtonData.FIVE], 38, 38, Short.MAX_VALUE))
 								.addGroup(layout.createParallelGroup()
-										.addComponent(keys[ONE], 38, 38, Short.MAX_VALUE)
-										.addComponent(keys[TWO], 38, 38, Short.MAX_VALUE))
-								.addComponent(keys[ZERO], 38, 38, Short.MAX_VALUE))
+										.addComponent(keys[ButtonData.ONE], 38, 38, Short.MAX_VALUE)
+										.addComponent(keys[ButtonData.TWO], 38, 38, Short.MAX_VALUE))
+								.addComponent(keys[ButtonData.ZERO], 38, 38, Short.MAX_VALUE))
 						.addGroup(layout.createSequentialGroup()
-								.addComponent(keys[BACK], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[NINE], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[SIX], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[THREE], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[SPOT], 38, 38, Short.MAX_VALUE))
+								.addComponent(keys[ButtonData.BACK], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.NINE], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SIX], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.THREE], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SPOT], 38, 38, Short.MAX_VALUE))
 						.addGroup(layout.createSequentialGroup()
-								.addComponent(keys[DIV], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[MUL], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[SUB], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[ADD], 38, 38, Short.MAX_VALUE)
-								.addComponent(keys[EQUAL], 38, 38, Short.MAX_VALUE))));
+								.addComponent(keys[ButtonData.DIV], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.MUL], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.SUB], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.ADD], 38, 38, Short.MAX_VALUE)
+								.addComponent(keys[ButtonData.EQUAL], 38, 38, Short.MAX_VALUE))));
 		//为所有按钮添加点击事件
 		OperationEvent.addClickEvent(keys, resultText);
 

@@ -3,22 +3,17 @@ package com.supermap.layout;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.security.Key;
 
 /**
  * @author Administrator
  */
 public class GridBagLayoutUI {
 
-	private final String[] KEYS = {"CE", "C", "←", "÷", "7", "8", "9", "×", "4", "5", "6", "-", "1", "2", "3", "+", "0", ".", "="};
-	private JButton[] keys = new JButton[KEYS.length];
+
+	private JButton[] keys = new JButton[ButtonData.KEYS.length];
 	private JTextField resultText = new JTextField("0");
 
-	public void GridBagLayoutUI() {
-		System.out.println(325);
-	}
+
 
 	//返回创建好的Panel
 	public JPanel addComponentsToPane(JPanel contentPane) {
@@ -30,7 +25,7 @@ public class GridBagLayoutUI {
 		contentPane.add(resultText, new GBC(0, 0, 4, 2).setIpad(400, 30)
 				.setWeight(2, 1).setFill(GridBagConstraints.BOTH));
 		for (int i = 0; i < keys.length; i++) {
-			keys[i] = new JButton(KEYS[i]);
+			keys[i] = new JButton(ButtonData.KEYS[i]);
 			keys[i].setFocusPainted(false);//点击时不会出现白色线框
 			if (i == keys.length - 3) {
 				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 2, 1).setIpad(0, 10).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
