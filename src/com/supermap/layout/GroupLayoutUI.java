@@ -90,12 +90,16 @@ public class GroupLayoutUI {
 								.addComponent(keys[ButtonData.SUB], 38, 38, Short.MAX_VALUE)
 								.addComponent(keys[ButtonData.ADD], 38, 38, Short.MAX_VALUE)
 								.addComponent(keys[ButtonData.EQUAL], 38, 38, Short.MAX_VALUE))));
-		//为所有按钮添加点击事件
-		OperationEvent.addClickEvent(keys, resultText);
+
 
 
 		return jPanel;
 
+	}
+
+	public void addOnclickEvent(){
+		//为所有按钮添加点击事件
+		OperationEvent.addClickEvent(keys, resultText);
 	}
 
 }

@@ -58,10 +58,13 @@ public class OperationEvent {
 									if ("".equals(text)) {
 										text = ButtonData.space;
 									} else {
+										if (error(text.substring(text.length() - 1, text.length())) && opStack.size() != 0) {
+											opStack.pop();
+										}
 										text = text.substring(0, text.length() - 1);
-									}
-									if (error(text.substring(text.length() - 1, text.length()))) {
-										opStack.pop();
+										if ("".equals(text)) {
+											text = ButtonData.space;
+										}
 									}
 									if (!"".equals(newString)) {
 										newString = newString.substring(0, newString.length() - 1);//截取输入的自后一个字符

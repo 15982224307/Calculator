@@ -35,11 +35,11 @@ public class GridBagLayoutUI {
 				contentPane.add(keys[i], new GBC(i % 4, i / 4 + 2, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
 			}
 		}
-		//为所有按钮添加点击事件
-		OperationEvent.addClickEvent(keys, resultText);
-
 		return contentPane;
 	}
 
-
+	public void addOnclickEvent(){
+		//为所有按钮添加点击事件
+		OperationEvent.addClickEvent(keys, resultText);
+	}
 }
