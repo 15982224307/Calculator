@@ -1,9 +1,8 @@
 package com.supermap.test;
 
-import com.supermap.layout.ButtonData;
-import com.supermap.layout.GBC;
-import com.supermap.layout.GridBagLayoutUI;
-import com.supermap.layout.GroupLayoutUI;
+import com.supermap.data.CusButton;
+import com.supermap.data.GBC;
+import com.supermap.layout.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,22 +20,32 @@ public class RunMethod {
 		jFrame.setResizable(false);//设置窗口不可缩放
 		JPanel jPanel = new JPanel();//新建面板
 
-		GridBagLayoutUI gridBagLayoutUI = new GridBagLayoutUI();//使用GridBagLyout布局计算器
-		GroupLayoutUI groupLayoutUI = new GroupLayoutUI();//使用GroupLayout布局计算器
+		CustomGridBag gridBagLayoutUI = new CustomGridBag(jPanel);//使用GridBagLyout布局计算器
+		//获取布局
+		JPanel jPanel1 = gridBagLayoutUI.getContentPane();
+		//获取指定按钮
+		JButton component = (CusButton) jPanel1.getComponent(11);
 
-		JPanel jPanel1 = gridBagLayoutUI.addComponentsToPane(jPanel);
+		System.out.println(component.getText());
+
+
+
+		//使用全部自定义布局，清除panel
+//		gridBagLayoutUI.openCustom();
 
 		//自定义按钮
-		JButton[] keys = new JButton[1];
-		keys[0] = new JButton("20");
-		jPanel1.add(keys[0], new GBC(6, 0, 1, 1).setIpad(0, 0).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1));
-		gridBagLayoutUI.addOnclickEvent(keys);
+//		CusButton cusButton = new CusButton("%");
+//		GBC gbc = new GBC(0, 7, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1);
+//		//为按钮设置属性
+//		cusButton.setGBC(gbc);
+//		//添加控件
+//		gridBagLayoutUI.addCustomButton(cusButton);
 
-		jFrame.setContentPane(jPanel1);//得到布局之后的面板
 
-		//按钮添加点击事件
-		gridBagLayoutUI.addOnclickEvent(ButtonData.keys);
 
+//		//得到布局之后的面板
+		jFrame.setContentPane(jPanel1);
+//
 
 		jFrame.pack();//容纳所有组件
 		jFrame.setVisible(true);//显示窗口

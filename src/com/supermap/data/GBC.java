@@ -1,4 +1,4 @@
-package com.supermap.layout;
+package com.supermap.data;
 
 import java.awt.*;
 
@@ -52,5 +52,22 @@ public class GBC extends GridBagConstraints{
         this.ipadx = ipadx;
         this.ipady = ipady;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "GBC{" +
+                "gridx=" + gridx +
+                ", gridy=" + gridy +
+                ", gridwidth=" + gridwidth +
+                ", gridheight=" + gridheight +
+                ", weightx=" + weightx +
+                ", weighty=" + weighty +
+                ", anchor=" + anchor +
+                ", fill=" + fill +
+                ", insets=" + insets +
+                ", ipadx=" + ipadx +
+                ", ipady=" + ipady +
+                '}';
     }
 }

@@ -1,5 +1,9 @@
 package com.supermap.layout;
 
+import com.supermap.control.OperationEvent;
+import com.supermap.data.ButtonData;
+import com.supermap.data.CusButton;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,7 +24,7 @@ public class GroupLayoutUI {
 		jPanel.setLayout(layout);
 		//初始化button数据
 		for (int i = 0; i < ButtonData.keys.length; i++) {
-			ButtonData.keys[i] = new JButton(ButtonData.KEYS[i]);
+			ButtonData.keys[i] = new CusButton(ButtonData.KEYS[i]);
 			ButtonData.keys[i].setFocusPainted(false);
 		}
 		// 自动创建组件之间的间隙
@@ -90,13 +94,13 @@ public class GroupLayoutUI {
 								.addComponent(ButtonData.keys[ButtonData.ADD], 38, 38, Short.MAX_VALUE)
 								.addComponent(ButtonData.keys[ButtonData.EQUAL], 38, 38, Short.MAX_VALUE))));
 
-
-
+		//默认按钮添加点击事件
+		addOnclickEvent(ButtonData.keys);
 		return jPanel;
 
 	}
 
-	public void addOnclickEvent(JButton[] keys){
+	private void addOnclickEvent(JButton[] keys) {
 		//为所有按钮添加点击事件
 		OperationEvent.addClickEvent(keys, resultText);
 	}
