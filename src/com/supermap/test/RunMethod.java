@@ -1,11 +1,15 @@
 package com.supermap.test;
 
+import com.supermap.control.AddOperation;
+import com.supermap.control.DivOperation;
+import com.supermap.control.MulOperation;
+import com.supermap.control.SubOperation;
 import com.supermap.data.CusButton;
-import com.supermap.data.GBC;
+import com.supermap.data.Data;
 import com.supermap.layout.*;
 
 import javax.swing.*;
-import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * @author Administrator
@@ -14,40 +18,43 @@ public class RunMethod {
 	//运行窗口的主方法
 	public static void main(String[] args) {
 
-		JFrame jFrame = new JFrame("计算器");//设置标题
-		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//关闭窗口时的行为
-		jFrame.setLocationRelativeTo(null);//设置窗口在屏幕正中显示
-		jFrame.setResizable(false);//设置窗口不可缩放
-		JPanel jPanel = new JPanel();//新建面板
 
-		CustomGridBag gridBagLayoutUI = new CustomGridBag(jPanel);//使用GridBagLyout布局计算器
-		//获取布局
-		JPanel jPanel1 = gridBagLayoutUI.getContentPane();
+		Calculator calculator = new Calculator();
+		calculator.show();
+
+		//自定义按钮
+		//加法
+		CusButton cusButton1 = new CusButton(Data.ADD.getText());
+		cusButton1.setCat(2);
+		cusButton1.setOperation(new AddOperation());
+		//减法
+		CusButton cusButton2 = new CusButton(Data.SUB.getText());
+		cusButton2.setCat(2);
+		cusButton2.setOperation(new SubOperation());
+		//乘法
+		CusButton cusButton3 = new CusButton(Data.MUL.getText());
+		cusButton3.setCat(2);
+		cusButton3.setOperation(new MulOperation());
+
+		//除法
+		CusButton cusButton4 = new CusButton(Data.DIV.getText());
+		cusButton4.setCat(2);
+		cusButton4.setOperation(new DivOperation());
+
+//		gridBagLayoutUI.addCustomButton(cusButton1);
+//		gridBagLayoutUI.addCustomButton(cusButton2);
+//		gridBagLayoutUI.addCustomButton(cusButton3);
+//		gridBagLayoutUI.addCustomButton(cusButton4);
+
+
 		//获取指定按钮
-		JButton component = (CusButton) jPanel1.getComponent(11);
-
-		System.out.println(component.getText());
-
-
+//		CusButton cusButton = gridBagLayoutUI.getButtonByText("+");
+//		System.out.println(cusButton.getText());
 
 		//使用全部自定义布局，清除panel
 //		gridBagLayoutUI.openCustom();
 
-		//自定义按钮
-//		CusButton cusButton = new CusButton("%");
-//		GBC gbc = new GBC(0, 7, 1, 1).setIpad(0, 10).setInsets(1).setFill(GridBagConstraints.BOTH).setWeight(1, 1);
-//		//为按钮设置属性
-//		cusButton.setGBC(gbc);
-//		//添加控件
-//		gridBagLayoutUI.addCustomButton(cusButton);
-
-
-
 //		//得到布局之后的面板
-		jFrame.setContentPane(jPanel1);
-//
 
-		jFrame.pack();//容纳所有组件
-		jFrame.setVisible(true);//显示窗口
 	}
 }
